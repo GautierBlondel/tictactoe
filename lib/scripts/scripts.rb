@@ -4,11 +4,9 @@ class Scripts
       puts "Bienvenue à nos deux challengers, aujourd'hui je vous présente !!!"
       puts "A ma droite nous avons..."
       player1_name = gets.chomp
-      # player1_name = "Corben"
     
       puts "Et à ma gauche nous avons"
       player2_name = gets.chomp
-      # player2_name = "Richard"
       puts "Voici donc nos deux challengers #{player1_name} et #{player2_name}" 
   
       return [player1_name, player2_name]
@@ -16,7 +14,6 @@ class Scripts
 
   def first_player
     first_player = ["X","O"][rand(0..1)]
-    # puts "first_player #{first_player}"
     return first_player
   end
 
@@ -66,8 +63,8 @@ class Scripts
 
     if forbidden_index.count == players_array.count
       puts scripting.all_slot_filled
-      sleep(2)
-      single_turn(current_players, first_player, forbidden_index, array_copy)
+      system("clear")
+      single_turn(current_players, next_sign, forbidden_index, players_array, player_1_score, player_2_score)
     end
   
     case self.winning_output(players_array)
